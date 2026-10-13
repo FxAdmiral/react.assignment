@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Counter</title>
+</head>
+<body>
+    <div id="counter-app">
+        <h2>Counter</h2>
+        <span id="count">0</span>
+        <button id="incrementBtn">Increment</button>
+        <button id="decrementBtn">Decrement</button>
+        <button id="resetBtn">Reset</button>
+        <h1>Even or Odd Numbers</h1>
+        <p id="parity">Even</p>
+    </div>
+
+    <script>
+       let count = 0;
+
+//grab DOM Elements manually 
+const incrementBtn = document.getElementById('incrementBtn');
+const decrementBtn = document.getElementById('decrementBtn');
+const resetBtn = document.getElementById('resetBtn');
+const display = document.getElementById('count');
+const parityDisplay = document.getElementById('parity');
+
+//Sync the DOM on every change.
+incrementBtn.addEventListener('click', () => {
+    count++;
+    display.textContent = count;
+    parityDisplay.textContent = count % 2 === 0 ? "Even" : "Odd";
+});
+
+decrementBtn.addEventListener('click', () => {
+    count--;
+    display.textContent = count;
+    parityDisplay.textContent = count % 2 === 0 ? "Even" : "Odd";
+});
+
+resetBtn.addEventListener('click', () => {
+    count = 0;
+    display.textContent = count;
+    parityDisplay.textContent = "Even";
+}); 
+    </script>
+</body>
+</html>
